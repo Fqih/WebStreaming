@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="./asset/styles.css">
+</head>
+<body>
+  <h1>Admin Dashboard</h1>
+  <main>
+    <h2>Fetch Banners</h2>
+    <form id="getBannersForm">
+      <label for="page">Page:</label>
+      <input type="number" id="page" name="page" min="1" value="1" required>
+      
+      <label for="limit">Limit:</label>
+      <input type="number" id="limit" name="limit" min="1" value="10" required>
+      
+      <button type="submit">Fetch Banners</button>
+    </form>
+
+    <h2>Add Banner</h2>
+    <form id="postBannerForm">
+      <label for="imageUrl">Image URL:</label>
+      <input type="url" id="imageUrl" name="imageUrl" required>
+      
+      <label for="description">Description:</label>
+      <input type="text" id="description" name="description" required>
+      
+      <label for="views">Views:</label>
+      <input type="number" id="views" name="views" min="0" required>
+      
+      <label for="rating">Rating:</label>
+      <input type="text" id="rating" name="rating">
+      
+      <label for="synopsis">Synopsis:</label>
+      <input type="text" id="synopsis" name="synopsis">
+      
+      <label for="release">Release Date:</label>
+      <input type="date" id="release" name="release">
+      
+      <label for="studio">Studio:</label>
+      <input type="text" id="studio" name="studio">
+      
+      <label for="genre">Genre:</label>
+      <select id="genre" name="genre" required>
+        <option value="" disabled selected>Select Genre</option>
+        <option value="Action">Action</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Drama">Drama</option>
+        <option value="Horror">Horror</option>
+        <option value="Romance">Romance</option>
+        <option value="Sci-Fi">Sci-Fi</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Fantasy">Fantasy</option>
+        <option value="Slice of Life">Slice of Life</option>
+        <option value="Supernatural">Supernatural</option>
+        <option value="Sports">Sports</option>
+        <option value="Mystery">Mystery</option>
+        <option value="Psychological">Psychological</option>
+        <option value="Thriller">Thriller</option>
+        <option value="Mecha">Mecha</option>
+        <option value="Historical">Historical</option>
+        <option value="Military">Military</option>
+        <option value="Music">Music</option>
+        <option value="School">School</option>
+        <option value="Ecchi">Ecchi</option>
+        <option value="Harem">Harem</option>
+        <option value="Josei">Josei</option>
+        <option value="Shoujo">Shoujo</option>
+        <option value="Shounen">Shounen</option>
+        <option value="Seinen">Seinen</option>
+      </select>
+       
+      <label>Status:</label>
+      <label><input type="checkbox" id="statusOngoing" name="status" value="Ongoing"> Ongoing</label>
+      <label><input type="checkbox" id="statusCompleted" name="status" value="Completed"> Completed</label>
+      
+      <label for="totalEpisodes">Total Episodes:</label>
+      <input type="number" id="totalEpisodes" name="totalEpisodes" min="0">
+      
+      <button type="submit">Add Banner</button>
+    </form>
+
+    <h2>Update Banner</h2>
+    <form id="updateBannerForm">
+      <label for="updateId">Banner ID:</label>
+      <input type="number" id="updateId" name="updateId" required>
+      
+      <label for="updateImageUrl">Image URL:</label>
+      <input type="url" id="updateImageUrl" name="updateImageUrl">
+      
+      <label for="updateDescription">Description:</label>
+      <input type="text" id="updateDescription" name="updateDescription">
+      
+      <label for="updateViews">Views:</label>
+      <input type="number" id="updateViews" name="updateViews" min="0">
+      
+      <label for="updateRating">Rating:</label>
+      <input type="text" id="updateRating" name="updateRating">
+      
+      <label for="updateSynopsis">Synopsis:</label>
+      <input type="text" id="updateSynopsis" name="updateSynopsis">
+      
+      <label for="updateRelease">Release Date:</label>
+      <input type="date" id="updateRelease" name="updateRelease">
+      
+      <label for="updateStudio">Studio:</label>
+      <input type="text" id="updateStudio" name="updateStudio">
+      
+      <label for="updateGenre">Genre:</label>
+      <select id="updateGenre" name="updateGenre">
+        <option value="">Select Genre</option>
+        <option value="Action">Action</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Drama">Drama</option>
+        <option value="Horror">Horror</option>
+        <option value="Romance">Romance</option>
+        <option value="Sci-Fi">Sci-Fi</option>
+        <option value="Supernatural">Supernatural</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Fantasy">Fantasy</option>
+        <option value="Mystery">Mystery</option>
+        <option value="Slice of Life">Slice of Life</option>
+        <option value="Psychological">Psychological</option>
+        <option value="Historical">Historical</option>
+        <option value="Sports">Sports</option>
+        <option value="Music">Music</option>
+      </select>
+      
+      
+      <label>Status:</label>
+      <label><input type="checkbox" id="updateStatusOngoing" name="updateStatus" value="Ongoing"> Ongoing</label>
+      <label><input type="checkbox" id="updateStatusCompleted" name="updateStatus" value="Completed"> Completed</label>
+      
+      <label for="updateTotalEpisodes">Total Episodes:</label>
+      <input type="number" id="updateTotalEpisodes" name="updateTotalEpisodes" min="0">
+      
+      <button type="submit">Update Banner</button>
+    </form>
+
+    <h2>Delete Banner</h2>
+    <form id="deleteBannerForm">
+      <label for="deleteId">Banner ID:</label>
+      <input type="number" id="deleteId" name="deleteId" required>
+      <button type="submit">Delete Banner</button>
+    </form>
+
+    <h2>Banners</h2>
+    <ul id="bannersList"></ul>
+  </main>
+  
+  <script src="./asset/admin.js"></script>
+</body>
+</html>
